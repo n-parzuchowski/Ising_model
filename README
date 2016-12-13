@@ -1,0 +1,28 @@
+This project is a Monte Carlo simulation of the Ising model.
+
+This is a simplified Ising model.
+We have a cubic lattice, whose dimension is specified by "lattice_dim" ( the lattice has lattice_dim^3 sites ).
+Each site can have spin up or spin down, polarized along the same axis as the external magnetic field.
+
+to make, type make (g++) 
+to run, type run! 
+
+Inputs:
+
+NOTE: Units are some product of the Boltzmann constant and the spin magnetic moment, which have been set to 1 for convenience. Typical values for J and B are between -1 and 1. 
+
+Lattice dimension: Number of sites along a single dimension. 10 gives 1000 total sites.
+Fraction of spins up:  The code sets up an initial configuration with the fraction you specify. It's not exact.
+J constant: specifies the strength of the spin-spin nearest neighbor interaction.
+
+J > 0: Ferromagnetism (spins like to align) 
+J < 0: Anti-Ferromagnetism
+
+External Magnetic Field:  A magnetic field oriented along the polarization axis.
+
+
+
+
+A plot is included, made with the python script plot_curie_temp.py
+
+I have computed the average magnetization as a function of temperature. This shows strong magnetization for low temperatures and a sudden breakdown as temperature increases. A perfect calculation would show a sharp cut-off at Tc (the Curie temperature). In practice, Monte Carlo errors smooth out the transition from magnetized to unmagnetized. The initial calculation shown in the plot takes the initial configuration to be 100% spin up, so Monte Carlo does a better job with low temperatures where these initial conditions mirror reality. You could start with any configuration and get the same results, provided you use enough Monte Carlo iterations.  Remember, if you start with equal amounts of spin-up and spin-down, there is no way to predict if the overall magnetism will be spin up or down. Multiple Monte Carlo calculations will average to zero in this case (use absolute values to avoid this). 
