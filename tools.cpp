@@ -1,4 +1,4 @@
-// Vanilla Options pricing with Black-Scholes and Monte-Carlo
+// Basic tools for Monte Carlo
 #include <iostream>
 #include <math.h>
 #include <stdlib.h>
